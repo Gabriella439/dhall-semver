@@ -1,5 +1,6 @@
 -- Increment the minor version
-let SemVer = ./SemVer.dhall
+let SemVer =
+      ./SemVer.dhall sha256:fb7b5afe5221c5628b98d0539e2dca1de868c0dd0c40883bea0cee2f4448ce15
 
 let minor
     : SemVer → SemVer =

@@ -1,8 +1,10 @@
 -- Render a semantic version as `Text`
 
-let Prelude = ./Prelude.dhall
+let Prelude =
+      ./Prelude.dhall sha256:771c7131fc87e13eb18f770a27c59f9418879f7e230ba2a50e46f4461f43ec69
 
-let SemVer = ./SemVer.dhall
+let SemVer =
+      ./SemVer.dhall sha256:fb7b5afe5221c5628b98d0539e2dca1de868c0dd0c40883bea0cee2f4448ce15
 
 let renderSuffix
     : Text → List Text → Text =
