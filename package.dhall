@@ -1,5 +1,5 @@
-{ SemVer =
-    ./SemVer.dhall sha256:fb7b5afe5221c5628b98d0539e2dca1de868c0dd0c40883bea0cee2f4448ce15
+{ SemanticVersion =
+    ./SemanticVersion.dhall sha256:fb7b5afe5221c5628b98d0539e2dca1de868c0dd0c40883bea0cee2f4448ce15
 , render =
     ./render.dhall sha256:57d455dd9164ab6bff230e51be028b09fcdacdbfb63f6a3c087e0563a294782c
 , major =

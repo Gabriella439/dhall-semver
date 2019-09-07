@@ -1,10 +1,10 @@
 -- Increment the major version
-let SemVer =
-      ./SemVer.dhall sha256:fb7b5afe5221c5628b98d0539e2dca1de868c0dd0c40883bea0cee2f4448ce15
+let SemanticVersion =
+      ./SemanticVersion.dhall sha256:fb7b5afe5221c5628b98d0539e2dca1de868c0dd0c40883bea0cee2f4448ce15
 
 let major
-    : SemVer → SemVer =
-    λ(v : SemVer) → v ⫽ { major = v.major + 1, minor = 0, patch = 0 }
+    : SemanticVersion → SemanticVersion =
+    λ(v : SemanticVersion) → v ⫽ { major = v.major + 1, minor = 0, patch = 0 }
 
 let example =
         assert

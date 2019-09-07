@@ -3,8 +3,8 @@
 let Prelude =
       ./Prelude.dhall sha256:771c7131fc87e13eb18f770a27c59f9418879f7e230ba2a50e46f4461f43ec69
 
-let SemVer =
-      ./SemVer.dhall sha256:fb7b5afe5221c5628b98d0539e2dca1de868c0dd0c40883bea0cee2f4448ce15
+let SemanticVersion =
+      ./SemanticVersion.dhall sha256:fb7b5afe5221c5628b98d0539e2dca1de868c0dd0c40883bea0cee2f4448ce15
 
 let renderSuffix
     : Text → List Text → Text =
@@ -17,8 +17,8 @@ let renderSuffix
       else  "${prefix}${Prelude.Text.concatSep "." ts}"
 
 let render
-    : SemVer → Text =
-      λ(v : SemVer)
+    : SemanticVersion → Text =
+      λ(v : SemanticVersion)
     → let X = Natural/show v.major
       
       let Y = Natural/show v.minor
