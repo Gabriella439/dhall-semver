@@ -13,4 +13,7 @@
 , patch =
       ./patch.dhall sha256:944c33abe48de3aa06e9ce601295a16b464edad7adc8e1c04da1da04ddbadf44
     ? ./patch.dhall
+, version =
+      ./version.dhall sha256:5cb68b850f7373f1aedf525a049569ce667de51a1ac02083fa0964cfcd35a035
+    ? ./version.dhall
 }
