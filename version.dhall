@@ -10,16 +10,16 @@ let render =
       ? ./render.dhall
 
 let version
-    :   ∀(major : Natural)
-      → ∀(minor : Natural)
-      → ∀(patch : Natural)
-      → SemanticVersion
-    =   λ(major : Natural)
-      → λ(minor : Natural)
-      → λ(patch : Natural)
-      → { major = major
-        , minor = minor
-        , patch = patch
+    : ∀(major : Natural) →
+      ∀(minor : Natural) →
+      ∀(patch : Natural) →
+        SemanticVersion
+    = λ(major : Natural) →
+      λ(minor : Natural) →
+      λ(patch : Natural) →
+        { major
+        , minor
+        , patch
         , build = [] : List Text
         , pre-release = [] : List Text
         }
