@@ -1,7 +1,7 @@
 -- Render a semantic version as `Text`
 
 let Prelude =
-        ./Prelude.dhall sha256:771c7131fc87e13eb18f770a27c59f9418879f7e230ba2a50e46f4461f43ec69
+        ./Prelude.dhall sha256:10db3c919c25e9046833df897a8ffe2701dc390fa0893d958c3430524be5a43e
       ? ./Prelude.dhall
 
 let SemanticVersion =
@@ -10,27 +10,25 @@ let SemanticVersion =
 
 let renderSuffix
     : Text → List Text → Text
-    =   λ(prefix : Text)
-      → λ(ts : List Text)
-      →       if Prelude.List.null Text ts
-        
+    = λ(prefix : Text) →
+      λ(ts : List Text) →
+        if    Prelude.List.null Text ts
         then  ""
-        
         else  "${prefix}${Prelude.Text.concatSep "." ts}"
 
 let render
     : SemanticVersion → Text
-    =   λ(v : SemanticVersion)
-      → let X = Natural/show v.major
-        
+    = λ(v : SemanticVersion) →
+        let X = Natural/show v.major
+
         let Y = Natural/show v.minor
-        
+
         let Z = Natural/show v.patch
-        
+
         let pre-release = renderSuffix "-" v.pre-release
-        
+
         let build = renderSuffix "+" v.build
-        
+
         in  "${X}.${Y}.${Z}${pre-release}${build}"
 
 let example =
